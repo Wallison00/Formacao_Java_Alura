@@ -1,32 +1,15 @@
-/*alert('Boas vindas ao jogo do número secreto'); //Alerta apresentado
+
+alert(`Boas vindas ao jogo do número secreto`); //Alerta apresentado
 let numeroSecreto = 3; //Criando variáreis
 
-let chute = prompt('Escolha um número entre 1 e 10:');
+console.log(`Número preenchido: (${numeroSecreto})`);
+
+let chute = prompt(`Escolha um número entre 1 e 10:`);
 
 if (numeroSecreto == chute){
-    console.log('Isso ai, você descobriu o número secreto! ('+ numeroSecreto +')');
+    //Para apresentar uma string não é preciso ter as pas simples, o usuo da crase `` substitui, e para declarar uma variável na string é utilizado ${variável}
+    console.log(`Isso ai, você descobriu o número secreto! (${numeroSecreto})`); 
+    alert(`Isso ai, você descobriu o número secreto! (${numeroSecreto})`);
 } else {
-    console.log('Tente novamente.');
-}*/
-
-//Desafio 
-
-alert('Boas vindas ao nosso site!');
-
-let nome = 'Lua';
-let idade = 25;
-let numeroDeVendas = 50;
-let saldoDisponivel = 1000;
-
-alert('Erro! Preencha todos os campos.');
-
-let mensagemDeErro = 'Erro! Preencha todos os campos.';
-
-alert(mensagemDeErro);
-
-nome = prompt('Qual o seu nome:');
-idade = prompt('Sua idade: ');
-
-if (idade >= 18){
-    alert('Pode tirar a habilitação');
+    console.log(`Você errou, tente novamente.`);
 }
