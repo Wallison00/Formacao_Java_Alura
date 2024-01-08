@@ -1,27 +1,36 @@
 
-alert(`Boas vindas ao jogo do número secreto`); //Alerta apresentado
-let numeroSecreto = 3; //Criando variáreis
-let tentativas = 0;
+alert(`Boas vindas ao jogo do número secreto!`);
 
-console.log(`Número Secreto: (${numeroSecreto})`);
+//Geração do número de forma aleatória (parseInt() -> considera somente numeros inteiros) + (Math.random() -> Gera numeros aleatórios entre 0 e 1)
+let numeroSecreto = parseInt(Math.random() * 10);
+console.log(`Numero Secreto: (${numeroSecreto})`);
 
-let chute;
-console.log(`Número Preenchido: (${chute})`);
+let numeroTentativas = 0;
+console.log(`Número de Tentativas: (${numeroTentativas})`);
 
-// enquanto == while
+let chute = null;
+
 while(chute != numeroSecreto){
-    chute = prompt(`Escolha um número entre 1 e 10:`);
-    tentativas ++;
-    
-    if(numeroSecreto == chute){
-        alert(`Isso ai, você descobriu o número secreto (${numeroSecreto}) na ${tentativas}º tentativa.`);
+    chute = prompt(`Escolha um número entre 0 e 10:`);
+    numeroTentativas ++;
+
+    if(chute == numeroSecreto){
+        break;
     }else{
-        if(numeroSecreto > chute){
-            alert(`${tentativas}º Tentativa - O número secreto é MAIOR que (${chute})! Tente novamente.`); 
+        if(chute < numeroSecreto){
+            alert(`O número secreto é MAIOR que ${chute}!`);
+            console.log(`MAIOR`);
         }else{
-            if(numeroSecreto < chute){
-                alert(`${tentativas}º Tentativa - O número secreto é MENOR que (${chute})! Tente novamente.`);
+            if(chute > numeroSecreto){
+                alert(`O número secreto é MENOR que ${chute}!`);
+                console.log(`MENOR`);
+            }else{
+                alert(`Erro desconhecido!`);
+                break;
             }
         }
     }
 }
+// Comparativo onde se o numero de tentativass for igual a 1 é retornado a primeira opção, se não retorna a segunda.
+let textoTentativas = numeroTentativas == 1 ? `tentativa` : `tentativas`;
+alert(`Você acertou o número secreto (${numeroSecreto}), com ${numeroTentativas} ${textoTentativas}`);
