@@ -2,7 +2,7 @@
 alert(`Boas vindas ao jogo do número secreto!`);
 
 //Geração do número de forma aleatória (parseInt() -> considera somente numeros inteiros) + (Math.random() -> Gera numeros aleatórios entre 0 e 1)
-let numeroSecreto = parseInt(Math.random() * 10);
+let numeroSecreto = parseInt(Math.random() * 10 + 1);
 console.log(`Numero Secreto: (${numeroSecreto})`);
 
 let numeroTentativas = 0;
@@ -11,7 +11,7 @@ console.log(`Número de Tentativas: (${numeroTentativas})`);
 let chute = null;
 
 while(chute != numeroSecreto){
-    chute = prompt(`Escolha um número entre 0 e 10:`);
+    chute = prompt(`Escolha um número entre 1 e 10:`);
     numeroTentativas ++;
 
     if(chute == numeroSecreto){
