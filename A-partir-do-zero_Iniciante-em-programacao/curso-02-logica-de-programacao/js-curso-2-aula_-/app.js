@@ -7,6 +7,7 @@
 
 //Criar uma função 
 //Verificar se a função verificarChute foi clicada no HTML
+
 function verificarChute(){ //Função sem parâmetro e sem retorno
     console.log('O botão foi clicado!');
 };
@@ -31,3 +32,21 @@ function gerarNumeroAleatorio() {
     return parseInt(Math.random() * 10 + 1);
 }
 
+
+//Exemplo acima
+function chamadaFuncao(){
+    //console.log(gerarNumeroAleatorio()); //Chama direto a função
+    console.log(numeroSecreto); //Repete o valor capturado pela função
+}
+
+
+//Capturando informação digitada
+function informacaoDigitada(){
+    let digitada = document.querySelector('input').value;
+    console.log(`O valor digitado foi (${digitada})`);
+}
+
+
+
+
+let captura = document.getElementsByClassName('input');
