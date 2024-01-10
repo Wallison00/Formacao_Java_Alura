@@ -4,16 +4,36 @@ function exibirTextoNaTela(tag, texto){
     campo.innerHTML = texto;
 }
 
-exibirTextoNaTela('h1', 'Jogo do número secreto!');
-exibirTextoNaTela('p', 'Escolha um número entre 1 e 10:')
+function situacaoInicial(){
+    exibirTextoNaTela('h1', 'Jogo do número secreto!');
+    exibirTextoNaTela('p', 'Escolha um número entre 1 e 10:');
+    return tentativas = 0;
+}
+
+situacaoInicial();
+
+//Geração de numero aleatorio
+function gerarNumeroAleatorio(){
+   return parseInt(Math.random() * 10 + 1);
+};
 
 
-
-let tentativas = 0;
 
 //Verificando o chute
-let numeroSecreto = parseInt(Math.random() * 10 + 1);
+let numeroSecreto = gerarNumeroAleatorio();
 console.log(numeroSecreto);
+
+//Reiniciar Jogo
+function reiniciarJogo(){
+    numeroSecreto = gerarNumeroAleatorio();
+    console.log(numeroSecreto);
+    tentativas = 0;
+    //limparCampo();
+    situacaoInicial();
+    //Reiniciar o stado do atributo disable
+    document.getElementById('reiniciar').setAttribute('disabled', true);
+}
+
 
 function verificarChute(){
     
@@ -28,7 +48,7 @@ function verificarChute(){
         
         //Buscar o elemento que tem id = reiniciar e remover o atributo desasabilitado do elemento
         document.getElementById('reiniciar').removeAttribute('disabled');
-
+        
     }else{
         if(chute < numeroSecreto){
             exibirTextoNaTela('p', `O numero secreto é MAIOR que ${chute}.`);
@@ -45,3 +65,5 @@ function limparCampo(){
     chute = document.querySelector('input');
     chute.value = '';
 };
+
+
