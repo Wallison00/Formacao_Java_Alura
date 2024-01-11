@@ -47,31 +47,25 @@ console.log(resultado);
 
 // 2 - Crie uma função que calcule o valor do fatorial de um número passado como parâmetro.
 
-fatorial(4);
+let fatorial = 7;
+console.log(`${fatorial}! é:`);
+fat(fatorial);
 
-function fatorial(numero){ //4
+function fat(numero){ //4
     
     multiplicador = numero - 1; //3
-    
-    /*
-    calculo = numero * multiplicador;
-    console.log(`Calculo realizado: ${calculo}`);
-    */
 
+    while(multiplicador != 0){
+        numero = calculadora(numero, multiplicador);
+        multiplicador--;
+    }
 
-   while(multiplicador != 0){
-    //console.log(`Laço ${multiplicador} do while`);
-    console.log(calculadora(numero,multiplicador));
-    numero = calculadora(numero, multiplicador);
-    multiplicador--;
-    console.log(`O número ${numero}`);
-   }
-
-   console.log(calculadora(numero,multiplicador));
+    //console.log(numero);
 };
 
 function calculadora(numero, multiplicador){
     resultado = numero * multiplicador;
+    console.log(`${numero} * ${multiplicador} = (${resultado})`);
     return resultado;
 }
 
