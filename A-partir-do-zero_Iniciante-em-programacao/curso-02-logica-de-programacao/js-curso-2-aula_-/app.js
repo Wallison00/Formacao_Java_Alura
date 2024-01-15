@@ -4,6 +4,8 @@ let listaDeNumerosSorteados = [];
 function exibirTextoNaTela(tag, texto){
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
+    //Reponsive voice (Voz de máquina no front)
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate: 1.2});
 }
 
 function situacaoInicial(){
