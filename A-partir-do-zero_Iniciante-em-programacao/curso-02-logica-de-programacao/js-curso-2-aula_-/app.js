@@ -67,3 +67,11 @@ function limparCampo(){
 };
 
 
+//Documentação sobre lista [array]
+
+//Ex.
+let numeros = [1, 5, 8];
+console.log(numeros[2]);
+
+let linguagens = ['JavaScript', 'Python', 'Java'];
+console.log(linguagens);
