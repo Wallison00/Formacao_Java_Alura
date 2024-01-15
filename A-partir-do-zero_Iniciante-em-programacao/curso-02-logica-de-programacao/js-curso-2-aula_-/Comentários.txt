@@ -1,0 +1,11 @@
+No array alguns comandos são usados para inserir ou excluir, são eles:
+
+* Push - Usado para inserir um valor dentro de um array sinalizado
+Ex.
+    frutas.push('Morango');
+    console.log(frutas);
+
+* Pop - usado para apagar o ultimo elemento do array
+Ex.
+    frutas.pop();
+    console.log(frutas);

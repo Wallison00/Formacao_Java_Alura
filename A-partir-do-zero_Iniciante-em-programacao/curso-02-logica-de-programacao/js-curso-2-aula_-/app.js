@@ -1,3 +1,5 @@
+//Criação da lista vazia
+let listaDeNumerosSorteados = [];
 
 function exibirTextoNaTela(tag, texto){
     let campo = document.querySelector(tag);
@@ -14,19 +16,32 @@ situacaoInicial();
 
 //Geração de numero aleatorio
 function gerarNumeroAleatorio(){
-   return parseInt(Math.random() * 10 + 1);
+    let numeroEscolhido =  parseInt(Math.random() * 10 + 1);
+
+    //Verificar os números já escolhidos.
+    if(listaDeNumerosSorteados.includes(numeroEscolhido)){
+
+        return gerarNumeroAleatorio();
+
+    }else{
+
+        //Adicionando o numero escolhido no array.
+        listaDeNumerosSorteados.push(numeroEscolhido);
+        console.log(listaDeNumerosSorteados);
+        return numeroEscolhido;
+   }
 };
 
-
+console.log(listaDeNumerosSorteados);
 
 //Verificando o chute
 let numeroSecreto = gerarNumeroAleatorio();
-console.log(numeroSecreto);
+//console.log(numeroSecreto);
 
 //Reiniciar Jogo
 function reiniciarJogo(){
     numeroSecreto = gerarNumeroAleatorio();
-    console.log(numeroSecreto);
+    //console.log(numeroSecreto);
     tentativas = 0;
     //limparCampo();
     situacaoInicial();
@@ -66,7 +81,7 @@ function limparCampo(){
     chute.value = '';
 };
 
-
+/*
 //Documentação sobre lista [array]
 
 //Ex.
@@ -75,3 +90,4 @@ console.log(numeros[2]);
 
 let linguagens = ['JavaScript', 'Python', 'Java'];
 console.log(linguagens);
+*/
